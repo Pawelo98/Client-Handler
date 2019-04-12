@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Client Handler</string>
+    <string name="problemQuestion">What everyday problem do you face?</string>
+    <string name="toDoListString">Show my ToDoList</string>
+    <string name="exitButton">Exit</string>
+    <string name="toDoListSoon">There is going to be a toDoList soon&#8230;</string>
+    <string name="backDoListSoon">Long click to go back to MainActivity&#8230;</string>
+    <string name="settingsActivity">Settings</string>
+    <string name="credits">Credits</string>
+    <string name="whenAppointment">When would you like to send reminder to your client?:</string>
+    <string name="toggleText">Credits text</string>
+    <string name="switchText">Show toggle toast?</string>
+    <string name="seekText">Use seek bar to adjust brightness</string>
+    <string name="widokGrid">Lista Grid</string>
+    <string name="goGrid">Grid View</string>
+    <string name="defaultSeekbar">Current device screen brightness value is 255</string>
+    <string name="listaKlientow">Lista Klientów</string>
+    <string name="makeCall">Zadzwoń</string>
+    <string name="clients">Klienci</string>
+    <string name="reservations">Szkolenia</string>
+    <string name="watchGallery">Galeria zdjęć</string>
+    <string name="sendSMS">Wyślij SMSa do Pawła</string>
+</resources>
