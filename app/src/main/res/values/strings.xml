@@ -15,9 +15,15 @@
     <string name="goGrid">Grid View</string>
     <string name="defaultSeekbar">Current device screen brightness value is 255</string>
     <string name="listaKlientow">Lista Klientów</string>
+    <string name="listaSzkolen">Lista Szkoleń</string>
     <string name="makeCall">Zadzwoń</string>
     <string name="clients">Klienci</string>
     <string name="reservations">Szkolenia</string>
     <string name="watchGallery">Galeria zdjęć</string>
     <string name="sendSMS">Wyślij SMSa do Pawła</string>
+    <string name="backToStart">Główne menu</string>
+    <string name="instructions">Użyj odczytu odcisku palca, by odblokować aplikację</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

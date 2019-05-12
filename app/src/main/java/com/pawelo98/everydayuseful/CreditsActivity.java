@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class CreditsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    String[] creditsArr = {"Freepik", "Roundicons", "Freebies", "Smashicon"};
+    String[] creditsArr = {"Freepik", "Roundicons", "Freebies", "Smashicon", "Icongeek26"};
     boolean showCredits = true;
 
     @Override
@@ -23,28 +23,10 @@ public class CreditsActivity extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
 
-        final Intent intencja1 = new Intent(this, Credits3Activity.class);
-        Button przycisk1 = findViewById(R.id.button1);
-        przycisk1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intencja1);
-            }
-        });
-
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            showCredits = extras.getBoolean("credits");
-        } else {
-            showCredits = true;
-        }
-
-        if(showCredits) {
-            ListView lista1 = findViewById(R.id.lista1);
-            lista1.setOnItemClickListener(this);
-            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, creditsArr);
-            lista1.setAdapter(adapter1);
-        }
+        ListView lista1 = findViewById(R.id.lista1);
+        lista1.setOnItemClickListener(this);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, creditsArr);
+        lista1.setAdapter(adapter1);
     }
 
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

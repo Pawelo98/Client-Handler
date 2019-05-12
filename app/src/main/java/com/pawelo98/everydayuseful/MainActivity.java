@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             os.close();
         } catch (Exception e) { e.printStackTrace(); }
 
-        final Intent intencja1 = new Intent(this, ToDoListActivity.class);
+        final Intent intencja1 = new Intent(this, ActivitySzkolenia.class);
         Button przycisk1 = findViewById(R.id.button1);
         przycisk1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,10 +107,7 @@ public class MainActivity extends AppCompatActivity {
     {
         if(backButtonCount >= 1)
         {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+            System.exit(0);
         }
         else
         {
@@ -120,6 +117,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void exitApp(View view) {
-        finish();
+        System.exit(0);
     }
 }

@@ -36,33 +36,6 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("spinner_czasu", MODE_PRIVATE);
         int index = sp.getInt("pozycja", 0);
 
-        toggleButton = findViewById(R.id.toggle1);
-        boolean toggled = sp.getBoolean("credit", true);
-        toggleButton.setChecked(toggled);
-
-        toggleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Switch sw1 = findViewById(R.id.switch1);
-
-                SharedPreferences sp = getSharedPreferences("spinner_czasu", MODE_PRIVATE);
-                SharedPreferences.Editor spe = sp.edit();
-
-                if(sw1.isChecked()) {
-                    Toast.makeText(getApplicationContext(), "Obecny stan: " + toggleButton.isChecked(), Toast.LENGTH_SHORT).show();
-                }
-                if(toggleButton.isChecked()) {
-                    credits = true;
-                    spe.putBoolean("credit", true);
-                }
-                else if(!toggleButton.isChecked()) {
-                    credits = false;
-                    spe.putBoolean("credit", false);
-                }
-                spe.apply();
-            }
-        });
-
         Spinner opcje = findViewById(R.id.spinner1);
         if (opcje != null) {
             opcje.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -107,10 +80,10 @@ public class SettingsActivity extends AppCompatActivity {
                 if(canWriteSettings) {
 
                     int screenBrightnessValue = i*255/100;
-                    text4.setText(SCREEN_BRIGHTNESS_VALUE_PREFIX + screenBrightnessValue);
+                    text4.setText(SCREEN_BRIGHTNESS_VALUE_PREFIX + screenBrightnessValue + "/255");
 
                     Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
-                    Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, screenBrightnessValue);
+                    Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, screenBrightnessValue*4);
                 } else
                 {
                     Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);

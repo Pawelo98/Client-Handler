@@ -26,7 +26,7 @@ public class LoadingActivity extends Activity {
             public void run()
             {
                 LoadingActivity.this.finish();
-                startActivity(new Intent(LoadingActivity.this, MainActivity.class));
+                startActivity(new Intent(LoadingActivity.this, AuthActivity.class));
             }
         }, DELAY);
         scheduled = true;
