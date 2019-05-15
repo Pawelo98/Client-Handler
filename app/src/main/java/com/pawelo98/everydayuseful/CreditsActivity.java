@@ -16,7 +16,6 @@ import android.widget.Toast;
 public class CreditsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     String[] creditsArr = {"Freepik", "Roundicons", "Freebies", "Smashicon", "Icongeek26"};
-    boolean showCredits = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +35,12 @@ public class CreditsActivity extends AppCompatActivity implements AdapterView.On
         TextView tv = (TextView) layout.getChildAt(0);
         tv.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         toast.show();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        final Intent intencja = new Intent(this, MainActivity.class);
+        startActivity(intencja);
     }
 }

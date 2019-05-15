@@ -109,6 +109,13 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed()
+    {
+        final Intent intencja = new Intent(this, MainActivity.class);
+        startActivity(intencja);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         Intent intent = new Intent(getBaseContext(), MainActivity.class);

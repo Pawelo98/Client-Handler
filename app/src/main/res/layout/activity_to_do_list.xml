@@ -8,6 +8,7 @@
 
     <LinearLayout
     app:layout_constraintTop_toTopOf="parent"
+    android:id="@+id/linearup"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -22,36 +23,45 @@
         android:textStyle="bold"
         android:text="@string/listaKlientow"/>
 
-    <ListView
-        android:id="@+id/lista3"
-        android:layout_width="match_parent"
-        android:layout_height="500dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:id="@+id/scroll1"
+            android:padding="13dp"
+            android:fillViewport="true">
 
-    </ListView>
+            <ListView
+                android:id="@+id/lista3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="13dp"
+        android:id="@+id/linearlow">
 
         <Button
-            android:id="@+id/buttonExtra"
-            android:text="@string/sendSMS"
+            android:id="@+id/buttonAdd"
+            android:text="@string/addClient"
             android:padding="7dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="20dp"
             android:layout_gravity="start|center_horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/buttonMIME"
-            android:text="@string/watchGallery"
+            android:id="@+id/buttonDelete"
+            android:text="@string/deleteClient"
             android:padding="7dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="30dp"
             android:layout_gravity="end|center_horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content" />
 
     </LinearLayout>

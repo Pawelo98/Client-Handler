@@ -16,8 +16,22 @@ public class MainActivity extends AppCompatActivity {
     boolean credits = true;
 
     String plikZapisu = "telephones.txt";
+    String plikZapisuNazwiska = "names.txt";
+    String plikZapisuMaile = "emails.txt";
+    String plikZapisuAdresy = "addresses.txt";
+    String plikZapisuSzkolen = "szkolenia.txt";
     FileOutputStream os;
+
+    String[] companies = {"Electronic Arts", "Steam"};
+    String[] hours = {"5", "14"};
+    String[] minutes = {"19", "49"};
+    int[] indeksy = {0, 1};
     String[] telephones = {"904-503-142", "504-001-301"};
+    String[] names = {"Janic Paweł", "Grzesiak Marian"};
+    String[] emails = {"pjanic98@gmail.com", "papajoz@onet.pl"};
+    String[] cities = {"Warszawa", "Wrocław"};
+    String[] streets = {"Główna", "Boczna"};
+    String[] numbers = {"8", "2/5"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +52,75 @@ public class MainActivity extends AppCompatActivity {
             for(int i=0; i<telephones.length; i++) {
                 data += telephones[i];
                 data += "\n";
+            }
+            os.write(data.getBytes());
+            os.close();
+
+            os = openFileOutput(plikZapisuNazwiska, Context.MODE_PRIVATE);
+            data = "";
+            for(int i=0; i<names.length; i++) {
+                data += names[i];
+                data += "\n";
+            }
+            os.write(data.getBytes());
+            os.close();
+
+            os = openFileOutput(plikZapisuMaile, Context.MODE_PRIVATE);
+            data = "";
+            for(int i=0; i<emails.length; i++) {
+                data += emails[i];
+                data += "\n";
+            }
+            os.write(data.getBytes());
+            os.close();
+
+            os = openFileOutput(plikZapisuAdresy, Context.MODE_PRIVATE);
+            data = "";
+            int j=0;
+            int i=0;
+            while(i<cities.length) {
+                if(j%3==0) data += cities[i];
+                if(j%3==1) data += streets[i];
+                if(j%3==2) data += numbers[i];
+                data += "\n";
+                j++;
+                if(j%3==0) i++;
+            }
+            os.write(data.getBytes());
+            os.close();
+
+            os = openFileOutput(plikZapisuSzkolen, Context.MODE_PRIVATE);
+            data = "";
+            int count = 0;
+            for(i=0; i<companies.length; i++) {
+                if(companies[i]!=null) count++;
+                else {
+                    for(j=i; j<companies.length; j++) {
+                        if(companies[j]!=null) {
+                            companies[i] = companies[j];
+                            companies[j] = null;
+                            hours[i] = hours[j];
+                            hours[j] = null;
+                            minutes[i] = minutes[j];
+                            minutes[j] = null;
+                            indeksy[i] = indeksy[j];
+                            indeksy[j] = 0;
+                            count++;
+                            break;
+                        }
+                    }
+                }
+            }
+            j=0;
+            i=0;
+            while(i<count) {
+                if(j%4==0) data += companies[i];
+                if(j%4==1) data += hours[i];
+                if(j%4==2) data += minutes[i];
+                if(j%4==3) data += indeksy[i];
+                data += "\n";
+                j++;
+                if(j%4==0) i++;
             }
             os.write(data.getBytes());
             os.close();
